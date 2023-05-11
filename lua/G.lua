@@ -7,6 +7,7 @@ G.v = vim.v
 G.fn = vim.fn
 G.api = vim.api
 G.opt = vim.opt
+G.loop = vim.loop
 G.treesitter = vim.treesitter
 
 function G.map(maps)

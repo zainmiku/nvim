@@ -4,7 +4,7 @@ local M = {}
 function GitInfo()
     local branch = G.g.coc_git_status or ''
     local diff = G.b.coc_git_status or ''
-    return (string.len(branch) > 0 and string.format(" %s ", branch) or " none ")
+    return (string.len(branch) > 0 and string.format(" %s ", branch) or " none ")
         .. (string.len(diff) > 0 and string.format('%s ', G.fn.trim(diff)) or '')
 end
 function CocErrCount()

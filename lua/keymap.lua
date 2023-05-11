@@ -144,6 +144,8 @@ G.map({
     -- 驼峰转换
     { 'v', 'T',           ':call v:lua.MagicToggleHump(v:true)<CR>',          { noremap = true, silent = true } },
     { 'v', 't',           ':call v:lua.MagicToggleHump(v:false)<CR>',         { noremap = true, silent = true } },
+    { 'n', 'T', 'g:nvim_tree_firsttime != 1 ? ":NvimTreeToggle<cr>" : ":let g:nvim_tree_firsttime = 0<cr>:NvimTreeToggle $PWD<cr>"', {silent = true, noremap = true, expr = true}},
+
 })
 
 -- 光标在$ 0 ^依次跳转

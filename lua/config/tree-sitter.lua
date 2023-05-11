@@ -3,7 +3,7 @@ local M = {}
 
 function M.parser_bootstrap()
     local parsers = require("nvim-treesitter.parsers")
-    local lang = parsers.ft_to_lang(G.api.nvim_eval('&ft'))
+    local lang = parsers.ft_to_lang(G.eval('&ft'))
     local has_parser = parsers.has_parser(lang)
     if not has_parser then
         G.cmd("try | call execute('TSInstall " .. lang .. "') | catch | endtry")
@@ -81,7 +81,7 @@ function M.setup()
         },
     })
     M.parser_bootstrap()
-    G.cmd([[ au FileType * lua require('pack/tree-sitter').parser_bootstrap() ]])
+    G.cmd([[ au FileType * lua require('config/tree-sitter').parser_bootstrap() ]])
 end
 
 return M

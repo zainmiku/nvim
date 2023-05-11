@@ -13,7 +13,7 @@ end
 -- 用于快速设定floatterm的相关map
 function M.setFTToggleMap(key, name, cmd)
     G.map({
-        { 'n', key, string.format(":lua require('pack/vim-floaterm').toggleFT('%s', '%s')<cr>", name, cmd), { silent = true, noremap = true }},
+        { 'n', key, string.format(":lua require('config/vim-floaterm').toggleFT('%s', '%s')<cr>", name, cmd), { silent = true, noremap = true }},
         { 't', key, "&ft == \"floaterm\" ? printf('<c-\\><c-n>:FloatermHide<cr>%s', floaterm#terminal#get_bufnr('" .. name .. "') == bufnr('%') ? '' : '" .. key.. "') : '" .. key.. "'", {silent = true, expr = true}},
     })
 end
@@ -43,8 +43,8 @@ function M.config()
     M.setFTToggleMap('<c-f>', 'RANGER', 'ranger')
     M.setFTToggleMap('<c-b>', 'DBUI', 'nvim +CALLDB')
     G.map({
-        { 'n', '<F5>', ':lua require("pack/vim-floaterm").runFile()<cr>', {silent = true, noremap = true}},
-        { 'i', '<F5>', '<esc>:lua require("pack/vim-floaterm").runFile()<cr>', {silent = true, noremap = true}},
+        { 'n', '<F5>', ':lua require("config/vim-floaterm").runFile()<cr>', {silent = true, noremap = true}},
+        { 'i', '<F5>', '<esc>:lua require("config/vim-floaterm").runFile()<cr>', {silent = true, noremap = true}},
         { 't', '<F5>', "&ft == \"floaterm\" ? printf('<c-\\><c-n>:FloatermHide<cr>%s', floaterm#terminal#get_bufnr('RUN') == bufnr('%') ? '' : '<F5>') : '<F5>'", {silent = true, expr = true}}
     })
 end

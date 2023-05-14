@@ -23,10 +23,6 @@ require('config/vim-visual-multi').config()
 -- 浮动终端
 require('config/vim-floaterm').config()
 
--- github copilot
-require('config/copilot').config()
-
--- fzf
 require('config/fzf').config()
 
 -- tree-sitter

@@ -65,26 +65,33 @@ G.map({
     -- CTRL SHIFT + 方向 快速跳转
     { 'i', '<c-s-up>',    '<up><up><up><up><up><up><up><up><up><up>',                     { noremap = true, silent = true } },
     { 'i', '<c-s-down>',  '<down><down><down><down><down><down><down><down><down><down>', { noremap = true, silent = true } },
-    { 'i', '<c-s-left>',  '<home>',           { noremap = true, silent = true } },
-    { 'i', '<c-s-right>', '<end>',            { noremap = true, silent = true } },
+    -- { 'i', '<c-s-left>',  '<home>',           { noremap = true, silent = true } },
+    -- { 'i', '<c-s-right>', '<end>',            { noremap = true, silent = true } },
     { 'n', '<c-s-up>',    '10k',              { noremap = true } },
     { 'n', '<c-s-down>',  '10j',              { noremap = true } },
-    { 'n', '<c-s-left>',  '^',                { noremap = true } },
-    { 'n', '<c-s-right>', '$',                { noremap = true } },
+    -- { 'n', '<c-s-left>',  '^',                { noremap = true } },
+    -- { 'n', '<c-s-right>', '$',                { noremap = true } },
     { 'v', '<c-s-up>',    '10k',              { noremap = true } },
     { 'v', '<c-s-down>',  '10j',              { noremap = true } },
-    { 'v', '<c-s-left>',  '^',                { noremap = true } },
-    { 'v', '<c-s-right>', '$h',               { noremap = true } },
+    -- { 'v', '<c-s-left>',  '^',                { noremap = true } },
+    -- { 'v', '<c-s-right>', '$h',               { noremap = true } },
 
+    -- { 'i', '<c-s-j>',    '<up><up><up><up><up><up><up><up><up><up>',                     { noremap = true, silent = true } },
+    -- { 'i', '<c-s-k>',  '<down><down><down><down><down><down><down><down><down><down>', { noremap = true, silent = true } },
+    -- { 'i', '<c-s-h>',  '<home>',           { noremap = true, silent = true } },
+    -- { 'i', '<c-s-l>', '<end>',            { noremap = true, silent = true } },
+    -- { 'n', '<c-s-j>',    '10k',              { noremap = true } },
+    -- { 'n', '<c-s-k>',  '10j',              { noremap = true } },
+    -- { 'n', '<c-s-h>',  '^',                { noremap = true } },
+    -- { 'n', '<c-s-l>', '$',                { noremap = true } },
+    -- { 'v', '<c-s-j>',    '10k',              { noremap = true } },
+    -- { 'v', '<c-s-k>',  '10j',              { noremap = true } },
+    -- { 'v', '<c-s-h>',  '^',                { noremap = true } },
+    -- { 'v', '<c-s-l>', '$h',               { noremap = true } },
+    
     -- 选中全文 选中{ 复制全文
     { 'n', '<m-a>',       'ggVG',             { noremap = true } },
     { 'n', '<m-s>',       'vi{',              { noremap = true } },
-
-    -- emacs风格快捷键 清空一行
-    { 'n', '<c-u>',       'cc<Esc>',          { noremap = true } },
-    { 'i', '<c-u>',       '<Esc>cc',          { noremap = true } },
-    { 'i', '<c-a>',       '<Esc>I',           { noremap = true } },
-    { 'i', '<c-e>',       '<Esc>A',           { noremap = true } },
 
     -- alt + 上 下移动行
     { 'n', '<m-up>',      ':m .-2<cr>',       { noremap = true, silent = true } },

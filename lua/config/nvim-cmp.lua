@@ -1,5 +1,35 @@
 local G = require('G')
+-- local lspkind = require('lspkind')
 local M = {}
+
+--   פּ ﯟ   some other good icons
+local kind_icons = {
+  Text = "",
+  Method = "m",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
 
 function M.config()  
 end
@@ -23,7 +53,22 @@ function M.setup()
       completion = cmp.config.window.bordered(),
       documentation = cmp.config.window.bordered(),
     },
-
+      -- 使用lspkind-nvim显示类型图标
+    formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      -- Kind icons
+      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        vsnip = "[VSNIP]",
+        luasnip = "[Luasnip]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+      })[entry.source.name]
+      return vim_item
+    end,
+    },
     mapping = cmp.mapping.preset.insert({
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -57,7 +102,7 @@ function M.setup()
     ["<C-e>"] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
-    
+    -- 来源
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
@@ -66,8 +111,6 @@ function M.setup()
       { name = 'path' },        -- For path completion
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
-    }, {
-      { name = 'buffer' },
     })
   })
 

@@ -1,4 +1,5 @@
 local M = {
+        -- nvim-cmp
     {
         "hrsh7th/nvim-cmp",
         event = 'InsertEnter',
@@ -13,10 +14,14 @@ local M = {
         "hrsh7th/cmp-buffer"
     },{
         "hrsh7th/cmp-nvim-lsp"
+    },
+        -- vsnip
+    {
+        "hrsh7th/cmp-vsnip"
     },{
-        "neovim/nvim-lspconfig"
+        "hrsh7th/vim-vsnip"
     },{
-        "saadparwaiz1/cmp_luasnip"
+        "rafamadriz/friendly-snippets"
     }
 }
 return M

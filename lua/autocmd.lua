@@ -12,8 +12,6 @@ G.api.nvim_create_autocmd({ "InsertLeave" }, { command = "hi CursorLine ctermbg=
 -- 以下是for不同文件类型的相关配置
 
 local function _go()
-    G.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.go" }, command = "silent! call CocAction('runCommand', 'editor.action.organizeImport')" })
-    G.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.go" }, command = "call CocAction('format')" })
     G.map({ { "v", "D", ":<c-u>call SurroundVaddPairs(\"/** \", \" */\")<cr>", { noremap = true, silent = true, buffer = true } }, })
 end
 

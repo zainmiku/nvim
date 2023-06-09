@@ -19,6 +19,7 @@ function M.setup_hlcodeblock()
     require('hl-mdcodeblock').setup({
         minumum_len = 80,
     })
+        minumum_len = function() return math.max(math.floor(G.api.nvim_win_get_width(0) * 0.8), 100) end })
 end
 
 return M

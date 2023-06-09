@@ -43,7 +43,10 @@ end
 
 function M.config()
     G.g.nvim_tree_firsttime = 1
-    G.map({ { 'n', 'T', 'g:nvim_tree_firsttime != 1 ? ":NvimTreeToggle<cr>" : ":let g:nvim_tree_firsttime = 0<cr>:NvimTreeToggle $PWD<cr>"', {silent = true, noremap = true, expr = true}} })
+    G.map({
+        { 'n', 'T',
+            'g:nvim_tree_firsttime != 1 ? ":NvimTreeToggle<cr>" : ":let g:nvim_tree_firsttime = 0<cr>:NvimTreeToggle $PWD<cr>"',
+            { silent = true, noremap = true, expr = true } } })
     G.cmd("hi! NvimTreeCursorLine cterm=NONE ctermbg=238")
     G.cmd("hi! link NvimTreeFolderIcon NvimTreeFolderName")
     G.cmd("au FileType NvimTree nnoremap <buffer> <silent> go :lua require('config.nvim-tree').magicCd()<cr>")
@@ -59,20 +62,20 @@ function M.setup()
         end
 
         api.config.mappings.default_on_attach(bufnr)
-        vim.keymap.set('n', 'P', api.tree.change_root_to_node, opts('CD'))
-        vim.keymap.set('n', '<BS>', api.tree.change_root_to_parent, opts('Up'))
-        vim.keymap.set('n', '<Esc>', api.tree.close, opts('Close'))
-        vim.keymap.set('n', '<Left>', api.node.navigate.parent_close, opts('Close Directory'))
-        vim.keymap.set('n', '<Right>', api.node.open.edit, opts('Open'))
-        vim.keymap.set('n', '<CR>',  api.node.open.edit, opts('Open'))
-        vim.keymap.set('n', ')', api.node.navigate.git.next, opts('Next Git'))
-        vim.keymap.set('n', '(', api.node.navigate.git.prev, opts('Prev Git'))
-        vim.keymap.set('n', '>', api.node.navigate.diagnostics.next, opts('Next Diagnostic'))
-        vim.keymap.set('n', '<', api.node.navigate.diagnostics.prev, opts('Prev Diagnostic'))
-        vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-        vim.keymap.set('n', 'A', api.fs.create, opts('Create'))
-        vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
-        vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
+        G.keymap.set('n', 'P', api.tree.change_root_to_node, opts('CD'))
+        G.keymap.set('n', '<BS>', api.tree.change_root_to_parent, opts('Up'))
+        G.keymap.set('n', '<Esc>', api.tree.close, opts('Close'))
+        G.keymap.set('n', '<Left>', api.node.navigate.parent_close, opts('Close Directory'))
+        G.keymap.set('n', '<Right>', api.node.open.edit, opts('Open'))
+        G.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+        G.keymap.set('n', ')', api.node.navigate.git.next, opts('Next Git'))
+        G.keymap.set('n', '(', api.node.navigate.git.prev, opts('Prev Git'))
+        G.keymap.set('n', '>', api.node.navigate.diagnostics.next, opts('Next Diagnostic'))
+        G.keymap.set('n', '<', api.node.navigate.diagnostics.prev, opts('Prev Diagnostic'))
+        G.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+        G.keymap.set('n', 'A', api.fs.create, opts('Create'))
+        G.keymap.set('n', 'a', api.fs.create, opts('Create'))
+        G.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
     end
 
     nvim_tree.setup({
@@ -93,7 +96,8 @@ function M.setup()
                     local height = math.max(math.floor(lines * 0.5), 20)
                     local left = math.ceil((columns - width) * 0.5)
                     local top = math.ceil((lines - height) * 0.5 - 2)
-                    return { relative = "editor", border = "rounded", width = width, height = height, row = top, col = left }
+                    return { relative = "editor", border = "rounded", width = width, height = height, row = top,
+                        col = left }
                 end,
             }
         },
@@ -106,16 +110,20 @@ function M.setup()
             group_empty = true,
             indent_markers = { enable = true },
             icons = {
-                git_placement = "after", webdev_colors = true,
+                git_placement = "after",
+                webdev_colors = true,
                 glyphs = {
-                    git = { unstaged = "~", staged = "✓", unmerged = "", renamed = "+", untracked = "?", deleted = "", ignored = " " },
+                    git = { unstaged = "~", staged = "✓", unmerged = "", renamed = "+", untracked = "?",
+                        deleted = "", ignored = " " },
                     folder = { empty = "", empty_open = "" }
                 }
             }
         },
         filters = { dotfiles = true },
         diagnostics = {
-            enable = true, show_on_dirs = true, debounce_delay = 50,
+            enable = true,
+            show_on_dirs = true,
+            debounce_delay = 50,
             icons = { hint = "", info = "", warning = "", error = "" }
         },
     })

@@ -8,7 +8,7 @@ G.fn = vim.fn
 G.api = vim.api
 G.opt = vim.opt
 G.loop = vim.loop
-G.treesitter = vim.treesitter
+G.keymap = vim.keymap
 
 function G.map(maps)
     for _,map in pairs(maps) do

@@ -12,7 +12,7 @@ G.api.nvim_create_autocmd({ "InsertLeave" }, { command = "hi CursorLine ctermbg=
 -- 以下是for不同文件类型的相关配置
 
 local function _go()
-    G.map({ { "v", "D", ":<c-u>call SurroundVaddPairs(\"/** \", \" */\")<cr>", { noremap = true, silent = true, buffer = true } }, })
+    -- G.map({ { "v", "D", ":<c-u>call SurroundVaddPairs(\"/** \", \" */\")<cr>", { noremap = true, silent = true, buffer = true } }, })
 end
 
 local function _javascript()

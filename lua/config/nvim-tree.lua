@@ -96,8 +96,14 @@ function M.setup()
                     local height = math.max(math.floor(lines * 0.5), 20)
                     local left = math.ceil((columns - width) * 0.5)
                     local top = math.ceil((lines - height) * 0.5 - 2)
-                    return { relative = "editor", border = "rounded", width = width, height = height, row = top,
-                        col = left }
+                    return {
+                        relative = "editor",
+                        border = "rounded",
+                        width = width,
+                        height = height,
+                        row = top,
+                        col = left
+                    }
                 end,
             }
         },
@@ -113,8 +119,15 @@ function M.setup()
                 git_placement = "after",
                 webdev_colors = true,
                 glyphs = {
-                    git = { unstaged = "~", staged = "✓", unmerged = "", renamed = "+", untracked = "?",
-                        deleted = "", ignored = " " },
+                    git = {
+                        unstaged = "~",
+                        staged = "✓",
+                        unmerged = "",
+                        renamed = "+",
+                        untracked = "?",
+                        deleted = "",
+                        ignored = " "
+                    },
                     folder = { empty = "", empty_open = "" }
                 }
             }

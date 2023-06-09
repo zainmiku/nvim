@@ -7,8 +7,10 @@ G.v = vim.v
 G.fn = vim.fn
 G.api = vim.api
 G.opt = vim.opt
+G.lsp = vim.lsp
 G.loop = vim.loop
 G.keymap = vim.keymap
+G.diagnostic = vim.diagnostic
 
 function G.map(maps)
     for _,map in pairs(maps) do

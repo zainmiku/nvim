@@ -1,13 +1,11 @@
 local M = {{
-    "junegunn/fzf",
+    dir = "~/.fzf",
     event = 'CmdLineEnter',
-    -- cmd = { 'RG', 'Files', 'BLines', 'GFiles', 'CHistory' },
 },{
     "junegunn/fzf.vim",
     after = "fzf",
     un = 'cd ~/.fzf && ./install --all',
     event = 'CmdLineEnter',
-    -- cmd = { 'RG', 'Files', 'BLines', 'GFiles', 'CHistory' },
     config = function()
         require('config/fzf').setup()
     end

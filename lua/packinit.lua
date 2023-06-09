@@ -1,14 +1,14 @@
 local G = require('G')
 local lazypath = G.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not G.loop.fs_stat(lazypath) then
-  G.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    G.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 G.opt.rtp:prepend(lazypath)
 -- vv 快速选中内容插件
@@ -96,6 +96,6 @@ if packer_bootstrap then
     require('packer').sync()
 end
 -- 部分个人自写插件
-require('config/yaocccc').config() 
+require('config/yaocccc').config()
 
 require("lazy").setup("plugins")

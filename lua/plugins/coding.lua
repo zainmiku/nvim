@@ -6,7 +6,7 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup()
             require("lspconfig").lua_ls.setup {}
-			require("lspconfig").gopls.setup {}
+            require("lspconfig").gopls.setup {}
         end,
     },
     {
@@ -16,8 +16,6 @@ return {
     -- snippets
     {
         "L3MON4D3/LuaSnip",
-        build = (not jit.os:find("Windows"))
-            and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp" or nil,
         dependencies = {
             "rafamadriz/friendly-snippets",
             config = function()

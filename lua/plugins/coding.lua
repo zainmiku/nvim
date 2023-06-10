@@ -3,6 +3,12 @@ return {
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+        opts = {
+            ensure_installed = {
+                "gopls",
+                "lua_ls",
+            }
+        },
         config = function()
             require("mason").setup()
         end,

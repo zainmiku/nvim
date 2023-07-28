@@ -25,6 +25,8 @@ require('config/vim-floaterm').config()
 
 require('config/fzf').config()
 
+require('config/markdown').config()
+
 -- tree-sitter
 require('config/tree-sitter').config()
 

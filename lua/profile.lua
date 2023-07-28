@@ -1,5 +1,7 @@
 local G = require('G')
 
+G.g.mapleader = " "
+G.g.maplocalleader = " "
 G.g.python3_host_prog = os.getenv('PYTHON') -- export PYTHON=$(which python3)
 G.opt.showcmd = true
 G.opt.encoding = 'utf-8'
@@ -44,6 +46,7 @@ G.opt.shortmess = 'filnxtToOcIF'
 G.opt.scrolloff = 5
 G.opt.showmode = false
 G.opt.number = true
+G.opt.relativenumber = true
 G.opt.numberwidth = 2
 G.opt.cul = true
 G.opt.signcolumn = 'yes'

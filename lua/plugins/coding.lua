@@ -1,16 +1,17 @@
-
 return {
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate", -- :MasonUpdate updates registry contents
-        opts = {
-            ensure_installed = {
-                "gopls",
-                "lua_ls",
-            }
-        },
         config = function()
-            require("mason").setup()
+            require("mason").setup({
+                ui = {
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗"
+                    }
+                }
+            })
         end,
     },
     {
@@ -25,6 +26,8 @@ return {
     -- snippets
     {
         "L3MON4D3/LuaSnip",
+        after = "nvim-cmp",
+        event = { "TextChanged" },
         dependencies = {
             "rafamadriz/friendly-snippets",
             config = function()
@@ -35,6 +38,7 @@ return {
             history = true,
             delete_check_events = "TextChanged",
         },
+
     },
 
     {

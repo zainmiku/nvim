@@ -65,16 +65,16 @@ G.map({
     -- CTRL SHIFT + 方向 快速跳转
     { 'i', '<c-s-up>',    '<up><up><up><up><up><up><up><up><up><up>',                     { noremap = true, silent = true } },
     { 'i', '<c-s-down>',  '<down><down><down><down><down><down><down><down><down><down>', { noremap = true, silent = true } },
-    -- { 'i', '<c-s-left>',  '<home>',           { noremap = true, silent = true } },
-    -- { 'i', '<c-s-right>', '<end>',            { noremap = true, silent = true } },
+    { 'i', '<c-s-left>',  '<home>',           { noremap = true, silent = true } },
+    { 'i', '<c-s-right>', '<end>',            { noremap = true, silent = true } },
     { 'n', '<c-s-up>',    '10k',              { noremap = true } },
     { 'n', '<c-s-down>',  '10j',              { noremap = true } },
-    -- { 'n', '<c-s-left>',  '^',                { noremap = true } },
-    -- { 'n', '<c-s-right>', '$',                { noremap = true } },
+    { 'n', '<c-s-left>',  '^',                { noremap = true } },
+    { 'n', '<c-s-right>', '$',                { noremap = true } },
     { 'v', '<c-s-up>',    '10k',              { noremap = true } },
     { 'v', '<c-s-down>',  '10j',              { noremap = true } },
-    -- { 'v', '<c-s-left>',  '^',                { noremap = true } },
-    -- { 'v', '<c-s-right>', '$h',               { noremap = true } },
+    { 'v', '<c-s-left>',  '^',                { noremap = true } },
+    { 'v', '<c-s-right>', '$h',               { noremap = true } },
 
     -- { 'i', '<c-s-j>',    '<up><up><up><up><up><up><up><up><up><up>',                     { noremap = true, silent = true } },
     -- { 'i', '<c-s-k>',  '<down><down><down><down><down><down><down><down><down><down>', { noremap = true, silent = true } },
@@ -88,7 +88,7 @@ G.map({
     -- { 'v', '<c-s-k>',  '10j',              { noremap = true } },
     -- { 'v', '<c-s-h>',  '^',                { noremap = true } },
     -- { 'v', '<c-s-l>', '$h',               { noremap = true } },
-    
+
     -- 选中全文 选中{ 复制全文
     { 'n', '<m-a>',       'ggVG',             { noremap = true } },
     { 'n', '<m-s>',       'vi{',              { noremap = true } },
@@ -143,8 +143,8 @@ G.map({
     { 'n', '-',           "foldlevel('.') > 0 ? 'za' : 'va{zf^'",             { noremap = true, silent = true, expr = true } },
     { 'v', '-',           'zf',                                               { noremap = true, silent = true } },
 
-    -- space 行首行尾跳转
-    { 'n', '<space>',     ':call v:lua.MagicMove()<cr>',                      { noremap = true, silent = true } },
+    -- tab 行首行尾跳转
+    { 'n', '`',       ':call v:lua.MagicMove()<cr>',                      { noremap = true, silent = true } },
     { 'n', '0',           '%',                                                { noremap = true } },
     { 'v', '0',           '%',                                                { noremap = true } },
 

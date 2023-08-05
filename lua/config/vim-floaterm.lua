@@ -38,10 +38,9 @@ function M.config()
     G.g.floaterm_opener = 'edit'
     G.cmd("au BufEnter * if &buftype == 'terminal' | :call timer_start(50, { -> execute('startinsert!') }, { 'repeat': 3 }) | endif")
     G.cmd("hi FloatermBorder ctermfg=fg ctermbg=none")
-
-    M.setFTToggleMap('<c-t>', 'TERM', '')
-    M.setFTToggleMap('<leader>lg', 'lg', 'lazygit')
-    M.setFTToggleMap('<c-f>', 'JOSHUTO', 'joshuto')
+    M.setFTToggleMap('<leader>t', 'TERM', '')
+    M.setFTToggleMap('<leader>g', 'LAZYGIT', 'lazygit')
+    M.setFTToggleMap('<leader>f', 'JOSHUTO', 'joshuto')
     M.setFTToggleMap('<c-b>', 'DBUI', 'nvim +CALLDB')
     G.map({
         { 'n', '<F5>', ':lua require("config/vim-floaterm").runFile()<cr>', {silent = true, noremap = true}},

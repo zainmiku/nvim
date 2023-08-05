@@ -85,6 +85,7 @@ function M.lspSetup()
             G.keymap.set('n', '<F2>', G.lsp.buf.rename, opts)
             G.keymap.set({ 'n', 'v' }, '<space>ca', G.lsp.buf.code_action, opts)
             G.keymap.set('n', 'gr', G.lsp.buf.references, opts)
+            -- 格式化
             G.keymap.set('n', '<C-L>', function()
                 G.lsp.buf.format { async = true }
             end, opts)

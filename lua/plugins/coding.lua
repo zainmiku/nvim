@@ -56,4 +56,10 @@ return {
             "onsails/lspkind-nvim"
         },
     },
+    {
+        'windwp/nvim-autopairs',
+        after = "nvim-cmp",
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    },
 }

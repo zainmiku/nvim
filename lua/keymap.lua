@@ -3,6 +3,7 @@ local G = require('G')
 G.map({
     -- 设置s t 无效 ;=: ,重复上一次宏操作
     { 'n', 's',         '<nop>',                                                     {} },
+    { 'n', ' ',         '<nop>',                                                     {} },
     { 'n', ';',         ':',                                                         {} },
     { 'v', ';',         ':',                                                         {} },
     { 'n', ',',         '@q',                                                        { noremap = true } },
@@ -17,8 +18,8 @@ G.map({
     { 'i', '<c-j>',     '<esc>f,a<cr>',                                              { noremap = true } },
 
     -- c-r = :%s/
-    { 'v', '<c-r>',     ':<c-u>%s/\\v//gc<left><left><left><left>',                  { noremap = true } },
-    { 'n', '<c-r>',     ':%s///gc<left><left><left><left>',                          { noremap = true } },
+    { 'v', '<leader>r',     ':<c-u>%s/\\v//gc<left><left><left><left>',                  { noremap = true } },
+    { 'n', '<leader>r',     ':%s///gc<left><left><left><left>',                          { noremap = true } },
 
     -- only change text
     { 'v', '<BS>',      '"_d',                                                       { noremap = true } },
@@ -120,10 +121,15 @@ G.map({
     { 'n', 's<Right>',    '<c-w>l',                                                    { noremap = true } },
     { 'n', 's<Up>',       '<c-w>k',                                                    { noremap = true } },
     { 'n', 's<Down>',     '<c-w>j',                                                    { noremap = true } },
+    { 'n', 'sh',          '<c-W>H',                                                    { noremap = true } },
+    { 'n', 'sl',          '<c-W>L',                                                    { noremap = true } },
+    { 'n', 'sk',          '<c-W>K',                                                    { noremap = true } },
+    { 'n', 'sj',          '<c-W>J',                                                    { noremap = true } },
     { 'n', 'ss',          '<c-w>w',                                                    { noremap = true } },
+    { 'n', 'sr',          '<c-w>r',                                                    { noremap = true } },
     { 'n', 's=',          '<c-w>=',                                                    { noremap = true } },
-    { 'n', '<m-.>',       "winnr() <= winnr('$') - winnr() ? '<c-w>10>' : '<c-w>10<'", { noremap = true, expr = true } },
-    { 'n', '<m-,>',       "winnr() <= winnr('$') - winnr() ? '<c-w>10<' : '<c-w>10>'", { noremap = true, expr = true } },
+    { 'n', 's.',          "winnr() <= winnr('$') - winnr() ? '<c-w>10>' : '<c-w>10<'", { noremap = true, expr = true } },
+    { 'n', 's,',          "winnr() <= winnr('$') - winnr() ? '<c-w>10<' : '<c-w>10>'", { noremap = true, expr = true } },
 
     -- buffers
     { 'n', 'W',           ':bw<cr>',                                                   { noremap = true, silent = true } },

@@ -19,18 +19,19 @@
 1. 将项目clone至 ~/.config/nvim 目录中(注意备份好自己的配置)  
   ```plaintext
   cd ~/.config
-  git clone https://github.com/yaocccc/nvim
+  git clone --depth 1 https://github.com/zainmiku/nvim
   ```
   2. 启动vim 等待自动安装packer(包管理工具、如果你没有安装的话) 会自动安装所有插件
 
-  3. 每次修改过lua/packinit.lua 请重启后PackerSync
+  3. 每次修改过lua/packinit.lua 请重启后Lazy
 
 ## 配置结构
 
   ```dir
   .
   ├─ lua/                -- LUA配置目录
-  │  ├─ pack/            -- 各插件的配置目录
+  │  ├─ config/          -- 各插件的配置目录
+  │  ├─ plugins/         -- 各插件的目录
   │  ├─ G.lua            -- G: Global 封装了lua配置内用到的部分通用方法
   ├─ profile.lua      -- 环境变量(各种set)
   │  ├─ keymap.lua       -- 快捷键配置
@@ -104,16 +105,6 @@
 ## lua/packinit.lua 插件相关的配置说明
 
 ## 插件说明以及键位绑定
-
-
-  <details>
-  <summary style="cursor: pointer; text-decoration:underline; color: #2AD;">dstein64/vim-startuptime -- 启动时间分析</summary>
-
-  [github: dstein64/vim-startuptime](https://github.com/dstein64/vim-startuptime)  
-
-  :StartupTime
-
-  </details>
 
   <details>
   <summary style="cursor: pointer; text-decoration:underline; color: #2AD;">terryma/vim-expand-region -- 快速选中文本</summary>
@@ -221,7 +212,7 @@
 
   | 模式   | 键                   | 说明                                 |
   | ------ | --------             | ---------                            |
-  | normal | ctrl + a             | Rg搜索(全局文本搜索)                 |
+  | normal | ctrl + f             | Rg搜索(全局文本搜索)                 |
   | normal | ctrl + l             | 当前buffer文本搜索                   |
   | normal | ctrl + p             | 全局文件搜索                         |
   | normal | ctrl + g             | git变更文件搜索                      |

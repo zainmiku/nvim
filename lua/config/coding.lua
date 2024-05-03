@@ -39,6 +39,18 @@ function M.lspSetup()
             },
         },
     }
+    require 'lspconfig'.rust_analyzer.setup {
+        cmd = { "rust-analyzer" },
+        filetypes = { "rust" },
+        root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
+        settings = {
+            ['rust-analyzer'] = {
+                diagnostics = {
+                    enable = false,
+                }
+            }
+        }
+    }
     require 'lspconfig'.clangd.setup {
         cmd = { "clangd" },
         filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },

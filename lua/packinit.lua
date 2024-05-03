@@ -33,6 +33,9 @@ require('config/tree-sitter').config()
 -- 文件管理器
 require('config/nvim-tree').config()
 
+-- 快捷键指引
+require('config/which-key').config()
+
 -- 状态栏 & 标题栏
 require('config/nvim-lines').config()
 
